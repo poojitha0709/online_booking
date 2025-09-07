@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>👨‍💻 Admin Panel</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Manage Shows</h2>
+    <input type="text" id="movieName" placeholder="Enter Movie Name">
+    <button onclick="addMovie()">Add Movie</button>
+
+    <ul id="movieList"></ul>
+  </main>
+
+  <script>
+    const movieList = document.getElementById("movieList");
+
+    function addMovie() {
+      const name = document.getElementById("movieName").value;
+      if (name) {
+        const li = document.createElement("li");
+        li.textContent = name;
+        movieList.appendChild(li);
+        document.getElementById("movieName").value = "";
+      }
+    }
+  </script>
+</body>
+</html>
